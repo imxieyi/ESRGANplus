@@ -112,7 +112,7 @@ class GaussianNoise(nn.Module):
         super().__init__()
         self.sigma = sigma
         self.is_relative_detach = is_relative_detach
-        self.noise = torch.tensor(0, dtype=torch.float).to(torch.device('cuda'))
+        self.noise = torch.tensor(0, dtype=torch.float)
 
     def forward(self, x):
         if self.training and self.sigma != 0:
